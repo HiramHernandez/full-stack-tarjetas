@@ -1,1 +1,13 @@
-<p>list-tarjeta-credito works!</p>
+<table class="table table-sm">
+    <tr *ngFor="let tarjeta of tarjetaService.list">
+        <td>{{ tarjeta.titular }}</td>
+        <td>{{ tarjeta.numero_tarjeta }}</td>
+        <td>{{ tarjeta.fecha_expiracion }}</td>
+        <td>
+            <i class="fa fa-edit fa-lg text-info" style="cursor: pointer;" (click)="editar(tarjeta)"></i>
+        </td>
+        <td>
+            <i class="fa fa-trash fa-lg text-info" (click)="eliminarTarjeta(tarjeta.id)" style="cursor: pointer;"></i>
+        </td>
+    </tr>
+</table>
